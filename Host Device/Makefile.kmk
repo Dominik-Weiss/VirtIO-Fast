@@ -1,0 +1,18 @@
+SUB_DEPTH = ../../../..
+include $(KBUILD_PATH)/subheader.kmk
+
+	
+#
+# DevVirtioFast - Virtual GPU
+#	
+DLLS += DevVirtioFast
+DevVirtioFast_TEMPLATE = VBOXR3
+DevVirtioFast_SOURCES  = \
+	DevVirtioFast.cpp \
+	../VirtIO/Virtio.cpp
+DevVirtioFast_LIBS     = \
+	$(LIB_RUNTIME) \
+	$(LIB_VMM)
+
+
+include $(FILE_KBUILD_SUB_FOOTER)
